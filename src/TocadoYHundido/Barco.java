@@ -17,5 +17,5 @@ public abstract  class Barco {
         return tamaño;
     }
 
-    public abstract void recibirImpacto();
+    public abstract void recibirImpacto(int x, int y);
 }

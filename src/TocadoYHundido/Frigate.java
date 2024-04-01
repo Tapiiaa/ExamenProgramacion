@@ -5,7 +5,7 @@ public class Frigate extends Barco{
         super(3);
     }
 
-    public void recibirImpacto(){
+    public void recibirImpacto(int x, int y){
         contadorImpactos++;
     }
 }

@@ -5,7 +5,7 @@ public class Canoe extends Barco{
         super(1);
     }
 
-    public void recibirImpacto(){
+    public void recibirImpacto(int x, int y){
         contadorImpactos++;
     }
 }

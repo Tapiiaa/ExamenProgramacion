@@ -7,7 +7,7 @@ public class Battleship extends Barco{
     }
 
     @Override
-    public void recibirImpacto(){
+    public void recibirImpacto(int x, int y){
         contadorImpactos++;
     }
 
