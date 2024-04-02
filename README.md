@@ -1,4 +1,4 @@
-Link a mi repositorio:  
+Link a mi repositorio:  https://github.com/Tapiiaa/ExamenProgramacion.git
 Examen Técnicas de Programación
 
 Se crea un juego interactivo de Tocado y Hundido donde se le pide a los usuarios que ingresen el tipo de barco con el que quieren jugar. 
