@@ -1,0 +1,83 @@
+@startuml
+title Classes Diagram
+
+class Barco {
+    - tamaño: int
+    - contadorImpactos: int
+    + Barco(tamaño: int)
+    + estaHundido(): boolean
+    + getTamaño(): int
+    + recibirImpacto(x: int, y: int): void
+}
+
+class Battleship {
+    + Battleship()
+    + recibirImpacto(x: int, y: int): void
+}
+
+class Canoe {
+    + Canoe()
+    + recibirImpacto(x: int, y: int): void
+}
+
+class Frigate {
+    + Frigate()
+    + recibirImpacto(x: int, y: int): void
+}
+
+class Jugador {
+    - barcos: ArrayList<Barco>
+    - sigueVivo: boolean
+    + Jugador()
+    + añadirBarco(barco: Barco): void
+    + estaVivo(): boolean
+    + disparar(jugador2: Jugador): void
+    - recibirAtaque(posicion: int): void
+}
+
+class Tablero {
+    - tablero: int[][]
+    + Tablero()
+    + colocarBarco(x: int, y: int): void
+    + recibirImpacto(x: int, y: int): void
+    + imprimirTablero(): void
+    + comprobarHundido(disparoXJ1: int, disparoYJ1: int): boolean
+}
+
+class Juego {
+    - jugador1: Jugador
+    - jugador2: Jugador
+    + Juego()
+    + iniciarJuego(): void
+    + main(args: String[]): void
+    + menu(): void
+}
+
+class RegistroBarcos {
+    - tiposBarcos: Map<String, HashMap<Integer,Barco>>
+    - numBarcos: Map<Integer, Barco>
+    - nombreBarcos: Map<String, Barco>
+    + RegistroBarcos()
+    + cargarBarco(tipo: String, num: int, barco: Barco): void
+}
+
+interface FabricaBarcos {
+    + crearBattleShip(): Barco
+    + crearFrigate(): Barco
+    + crearCanoe(): Barco
+}
+
+class FabricaBarcosIndiv {
+    + crearBattleShip(): Barco
+    + crearFrigate(): Barco
+    + crearCanoe(): Barco
+}
+
+Battleship --|> Barco : Extends
+Canoe --|> Barco : Extends
+Frigate --|> Barco : Extends
+FabricaBarcos <|.. FabricaBarcosIndiv : Implements
+Jugador "1" *-- "many" Barco : contains
+Juego "1" *-- "2" Jugador : contains
+
+@enduml
